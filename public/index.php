@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welcome to Adlister!!</title>
+    <title>Welcome to Fashion Advenue.com</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -29,6 +29,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +54,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Fashion A[d]venue</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,13 +64,13 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">My Account</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Browse Ads</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Lookbook</a>
                     </li>
                 </ul>
             </div>
@@ -79,9 +82,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1>The best place on the web to browse, buy and sell. All in a snap!</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                <p>Ad-Snap can help you upload and share your awesome creations with the world! You can also browse or buy from other awesome entrepreneurs just like you,  no strings attached!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
@@ -93,7 +96,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                    <p class="text-faded">Looking for that hard to find vintage blouse or killer date night outfit? Have you created a beautiful accessory that's seeking a long term relationship with the perfetct outfit? Awesome, Stroll on over to Fashion A[d]Venue! As exclusive, eclectic and awesome as a trip down the runway, without the trip!</p>
                     <a href="#" class="btn btn-default btn-xl">Get Started!</a>
                 </div>
             </div>
@@ -104,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Popular Categories</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -114,29 +117,29 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <h3>Jewelry</h3>
+                        <p class="text-muted">Beautiful and creative pieces to complement your wardrobe stylishly.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <h3>Accessories</h3>
+                        <p class="text-muted">The perfect handbag or the belt that brings it all together, is waiting for you!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <h3>Shoes</h3>
+                        <p class="text-muted">Strut your stuff and knock them dead...with Shoes to kill</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
                         <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <p class="text-muted">Vintage finds, awesome creations and wicked outfits created or selected with you in mind! </p>
                     </div>
                 </div>
             </div>
@@ -155,7 +158,7 @@
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Women's Clothing
                                 </div>
                             </div>
                         </div>
@@ -163,14 +166,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="https://unsplash.it/650/350?image=534" class="img-responsive" alt="">
+                        <img src="https://unsplash.it/650/350?image=473" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Men's Clothing
                                 </div>
                             </div>
                         </div>
@@ -178,14 +181,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="https://unsplash.it/650/350?image=532" class="img-responsive" alt="">
+                        <img src="/img/fashadvjewelry.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Jewelry
                                 </div>
                             </div>
                         </div>
@@ -200,7 +203,7 @@
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Accessories
                                 </div>
                             </div>
                         </div>
@@ -208,14 +211,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="https://unsplash.it/650/350?image=531" class="img-responsive" alt="">
+                        <img src="/img/fashadvshoes.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Shoes
                                 </div>
                             </div>
                         </div>
@@ -230,7 +233,7 @@
                                     Category
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Vintage
                                 </div>
                             </div>
                         </div>
@@ -243,8 +246,8 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                <h2>Become a retail partner and sign up for an account now!</h2>
+                <a href="#" class="btn btn-default btn-xl wow tada">Create Account</a>
             </div>
         </div>
     </aside>
@@ -253,17 +256,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">Connect With Us!</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>Ready to share your amazing fashion sense with the world? How about discovering the next indie designer's cool fashions, or just ready to create awesome things for others? That's awesome, stroll down the A[d]venue and share your Passion for Fashion!</p>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
+
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-facebook-square fa-4x wow bounceIn"></i>
+                    <p><a href ="facebook.com">Find Us On Facebook</a></p>
+                </div>
+                <div class="col-lg-4 text-center" "instagram">
+                    <i class="fa fa-instagram fa-4x wow bounceIn"></i>
+                    <p><a href="instagram.com">Find Us On Instagram</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <i class="fa fa-twitter-square fa-4x wow bounceIn" "twitter" data-wow-delay=".1s"></i>
+                    <p><a href="twitter.com">Find Us On Twitter</a></p>
                 </div>
             </div>
         </div>

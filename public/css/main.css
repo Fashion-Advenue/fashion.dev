@@ -1,0 +1,15 @@
+header {
+    background-image: url(../img/adsnapbg1.jpg);
+
+}
+a:hover {
+    color: black;
+}
+.instagram{
+    float: left;
+    position: relative;
+}
+.twitter{
+    float: right;
+    position: relative;
+}
