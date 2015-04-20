@@ -1,74 +1,97 @@
 <?php 
+// EXERCISE 9.1.3 NOT COMPLETE Retrieving Data, User Side
+// EXERCISE 9.1.4 Prepared Statememts, Dynamic Queries and User Input
+// EXERCISE 9.9
 
-// an array of items for sale, simulation for "ads" database
-$items = [];
+require 'db_connect.php'; 
 
-$items = array(
-	'belt' => array(	
+$dbc->exec('TRUNCATE TABLE ads');
+
+$ads = [
+	[
 		'headline' => 'Relic Silver Ball Grommet Belt',
 		'price' => '5.00',
-		'size' => 'large',
+		'size' => 'L',
 		'category' => 'accessories',
 		'description'  => 'Synthetic leather with silver beading and nicely fashioned grommets.',
-		'contact' => 'text'
-		)
-	'shoe ornaments' => array(
+		'contact' => 'call'
+	],
+	[
 		'headline' => 'Fun Shoe Ornaments',
 		'price' => '10.00',
-		'size' => 'One Size',
+		'size' => 'NA',
 		'category' => 'shoes',
 		'description' => '3/4 inches long, various ornaments, total of 20 pieces',
-		'contact' => 'text'
-		)
-	'ring' => array(
+		'contact' => 'email'
+	],
+	[
 		'headline' => 'Diamond Ring, 14 carat gold',
 		'price' => '300.00',
 		'size' => '7',
 		'category' => 'jewelry',
 		'description' => 'Estate sale ring, appraised at $400 by Americus Diamond',
 		'contact' => 'text'
-		)
-	'necklace' => array(
+	],
+	[
 		'headline' => 'Heart and charm stones necklace',
 		'price' => '10.00',
-		'size' => '16 inches',
+		'size' => '16',
 		'category' => 'jewelry',
 		'description' => 'Never worn. Sterling silver with curbic zirconia',
 		'contact' => 'text'
-		)
-	'shoes' => array(
-		'headine' => 'Fun shoes for your little girl',
+	],
+	[
+		'headline' => 'Fun shoes for a little girl',
 		'price' => '10.00',
 		'size' => '7',
 		'category' => 'shoes',
 		'description' => 'Crafted by KB Designs, sure to please',
 		'contact' => 'text'
-		)
-	'dress' => array(
+	],
+	[
 		'headline' => 'Cute fun party or play dress.',
 		'price' => '20.00',
-		'size' => '2';
+		'size' => '2',
 		'category' => 'clothing',
-		'description' => 'Cute party dress or make believe dress! Top is cotton. Bottom is tulle, length 12 inches from waist.',
+		'description' => 'Cute party dress or make believe dress! Top is cotton.',
 		'contact' => 'text'
-		)
-	'jeans' => array(
+	],
+	[
 		'headline' => 'LA Idol USA jeans, good condition',
 		'price' => '18.00',
 		'size' => '11',
-		'category' => 'clothing';
+		'category' => 'clothing',
 		'description' => 'Great jeans for a night out',
 		'contact' => 'text'
-		)
-	'purse' => array(
+	],
+	[
 		'headline' => 'Vera Bradley purse, blue flower design',
 		'price' => '20.00',
-		'size' => 'One Size',
+		'size' => 'One',
 		'category' => 'accessories',
 		'description' => 'Shoulder bag, very nice condition',
 		'contact' => 'text'	
-		)
-	)
+	]
+];
+
+$stmt = $dbc->prepare('INSERT INTO ads (headline, price, size, category, description, contact) 
+	VALUES (:headline, :price, :size, :category, :description, :contact)');
+
+
+foreach ($ads as $ad) {
+    $stmt->bindValue(':headline',       $ad['headline'],    PDO::PARAM_STR);
+    $stmt->bindValue(':price',          $ad['price'],       PDO::PARAM_STR);
+    $stmt->bindValue(':size', 			$ad['size'],		PDO::PARAM_STR);
+    $stmt->bindValue(':category',		$ad['category'],    PDO::PARAM_STR);
+    $stmt->bindValue(':description',	$ad['description'], PDO::PARAM_STR);
+    $stmt->bindValue(':contact',		$ad['contact'],		PDO::PARAM_STR);
+
+    $stmt->execute();
+}
+echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
+
+
+?>
 
 
 
@@ -77,4 +100,7 @@ $items = array(
 
 
 
- ?>
+
+
+
+

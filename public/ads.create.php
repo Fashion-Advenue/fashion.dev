@@ -17,7 +17,7 @@ function pageController()
 	$data['message'] = 'Hello Keyasha!';
 
 	// Return the completed data array.
-	return $data
+	return $data;
 
 }
 // Call the pageController function 
