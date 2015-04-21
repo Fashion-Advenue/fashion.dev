@@ -10,8 +10,7 @@ require 'db_connect.php';
 $users = [];
 
 $users = [
-	['userName' => 'Micky',
-	'firstName' => 'Mic',
+	['firstName' => 'Mic',
 	'lastName' => 'Jagger',
 	'email' => 'Micky@gmail.com',
 	'phone' => '2108541466',
@@ -22,8 +21,7 @@ $users = [
 	'zipCode' => '78212',
 	'preferContact' => 'call'
 	],
-	['userName' => 'green',
-	'firstName' => 'Kermit',
+	['firstName' => 'Kermit',
 	'lastName' => 'Frog',
 	'email' => 'paulasatx@gmail.com',
 	'phone' => '2101111111',
@@ -35,8 +33,7 @@ $users = [
 	'zipCode' => '78201',
 	'preferContact' => 'email'
 	],
-	['userName' => 'Princess',
-	'firstName' => 'Leah',
+	['firstName' => 'Leah',
 	'lastName' => 'Skywalker',
 	'email' => 'paulabox2@gmail.com',
 	'phone' => '2107777777',
@@ -47,8 +44,7 @@ $users = [
 	'zipCode' => '78209',
 	'preferContact' => 'email'
 	],
-	['userName' => 'Julian',
-	'firstName' => 'Julian',
+	['firstName' => 'Julian',
 	'lastName' => 'Castro',
 	'email' => 'thebettertwin@gmail.com',
 	'phone' => '2102102100',
@@ -59,8 +55,7 @@ $users = [
 	'zipCode' => '78205',
 	'preferContact' => 'text'
 	],
-	['userName' => 'Johnny',
-	'firstName' => 'Johnny',
+	['firstName' => 'Johnny',
 	'lastName' => 'Appleseed',
 	'email' => 'apples@gmail.com',
 	'phone' => '2109992100',
@@ -74,9 +69,9 @@ $users = [
 ];
  
 // with id auto-incrementing via function in migration file. 
-$stmt = $dbc->prepare('INSERT INTO users (userName, firstName, lastName, 
+$stmt = $dbc->prepare('INSERT INTO users (firstName, lastName, 
 	email, phone, houseNum, street, city, state, zipCode, preferContact) 
-	VALUES (:userName, :firstName, :lastName, :email, :phone, :houseNum, 
+	VALUES (:firstName, :lastName, :email, :phone, :houseNum, 
 		:street, :city, :state, :zipCode, :preferContact)');
 
 
