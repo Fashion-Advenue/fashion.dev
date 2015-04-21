@@ -13,3 +13,22 @@ a:hover {
     float: right;
     position: relative;
 }
+.footer{
+    background-color: black;
+    text-align: center;
+}
+.links{
+    font-size: 15px;
+    padding-left: 25px;
+}
+.lookbook{
+        background-image: url(../img/runwaylg.jpg);
+
+}
+h2{
+    margin-top: -50px;
+}
+.page-look{
+    background-color: #f05f40;
+}
+      
