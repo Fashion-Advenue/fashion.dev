@@ -6,8 +6,6 @@ class BaseModel
 	protected static $dbc; 
     protected static $table;
 
-    $table = static::$table;
-
     public $attributes = [];
 
     public function construct()
