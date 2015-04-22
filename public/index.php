@@ -87,9 +87,10 @@
                         </div>
                     </a>
                 </div>
+                <!-- Need to replace photo for men's clothes site went down -->
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="https://unsplash.it/650/350?image=473" class="img-responsive" alt="">
+                        <img src="/img/mensclothes.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">

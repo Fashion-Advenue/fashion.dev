@@ -18,7 +18,7 @@ function pageController()
 	$data['message'] = 'Hello Keyasha!';
 
 	// Return the completed data array.
-	return $data
+	return $data;
 
 }
 // Call the pageController function 
@@ -33,48 +33,42 @@ extract(pageController());
 
 
 ?>
+<!-- This is the user signup page -->
 <html>
-<head>
-	<title></title>
-</head>
+<?php require_once '../views/partials/head.php'; ?>
 <body>
+<?php require_once '../views/partials/navbar.php'; ?>
+<header class="blkwht">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>The intersection where fashion meets passion</h1>
+        </div>
+    </div>
+</header>
+
+
 <h1>Register Your Account</h1>
-	 <div>
-
-		<form method="POST" action="">
-			<label for="userName">*Please enter a user name.</label>
-			<input id="userName" placeholder="Username">
-			<label for="firstName">*First Name</label>
-			<input id="firstName" 		placeholder="First Name">
-			<label id="lastName">*Last Name</label>
-			<input id="lastName"		placeholder="Last Name">
-			<label for="email">*Email</label>
-			<input id="email"			placeholder="email">
-			<label id="phone">*Enter your phone in the suggested format.</label>
-			<input id="phone"			placeholder="phone xxx-xxx-xxxx">
-		
-			<p>Your Contact Preference:</p>
-			<label>	<input type="checkbox" 	id="callUser" 		name="">Call</label>
-			<label>	<input type="checkbox" 	id="textUser" 		name="">Call</label>
-			<label> <input type="checkbox" 	id="emailUser" 		name="">Email</label>
-			
-			<label>Address Number</label>
-			<input id="houseNum" >
-			<label>Street</label>
-			<input id="street">
-			<label>Apt. or Unit</label>
-			<input id="apartment">
-			<label>City</label>
-			<input id="city">
-			<label>State</label>
-			<input id="state">
-			<label>5-Digit Zip Code</label>
-			<input id="zipCode">
-
-			<button type="submit"></button>
-
-		</form>
-	</div>
+	 <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember Me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
 </body>
 </html>

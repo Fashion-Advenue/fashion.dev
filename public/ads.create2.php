@@ -1,6 +1,4 @@
 <?php 
-// *** ROUGH DRAFT, PASTED ADS.CREATE.PHP FOR 
-// *** BASIC IDEA OF WHAT NEEDS TO ACTUALLY DISPLAY ON THIS PAGE FOR THE USER
 
 
 // Require or include statements are allowed here.
@@ -12,14 +10,14 @@
  */
 function pageController()
 {
-	// Initialize an empty data array.
+    // Initialize an empty data array.
 
 
-	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
+    // Add data to be used in the HTML view.
+    $data['message'] = 'Hello Keyasha!';
 
-	// Return the completed data array.
-	return $data;
+    // Return the completed data array.
+    return $data;
 
 }
 // Call the pageController function 
@@ -33,7 +31,11 @@ extract(pageController());
 
 
 
-?>
+
+
+ ?>
+
+
 
 <html>
 <?php require_once '../views/partials/head.php'; ?>
@@ -46,7 +48,7 @@ extract(pageController());
         </div>
     </div>
 </header>
-    <h1>Edit Your Ad</h1>
+    <h1>Create Your Ad</h1>
     <form method="POST" action="" class="form-horizontal">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-2 control-label">Title of Ad</label>
@@ -67,10 +69,17 @@ extract(pageController());
     </div>
   </div>
 
-<h3>Edit Item Description</h3> 
+<h3>Item Description</h3> 
   <textarea class="form-control" rows="3" placeholder="Enter Item Description"></textarea>
+<h3>File Uploader</h3>
 
-<h3>Edit Item Category</h3> 
+<div class="form-group">
+    <label for="exampleInputFile">Upload Image(s)</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Images limited to a maximum of four (4) uploads.</p>
+  </div>
+
+<h3>Item Category</h3> 
     <div class="radio">
       <label>
         <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
@@ -108,7 +117,7 @@ extract(pageController());
       </label>
     </div>
 
-<h3>Edit Preferred Contact Method</h3>
+<h3>Preferred Contact Method</h3>
 
     <div class="checkbox">
       <label>
@@ -128,9 +137,6 @@ extract(pageController());
         Email
       </label>
     </div>
-<h3>Add Photo(s)</h3>
-<hr>
-<h3>Delete Photo(s)</h3>
 <hr>
 
   <div class="form-group">

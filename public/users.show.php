@@ -16,7 +16,7 @@ function pageController()
 	$data['message'] = 'Hello Keyasha!';
 
 	// Return the completed data array.
-	return $data
+	return $data;
 
 }
 // Call the pageController function 
@@ -28,6 +28,8 @@ extract(pageController());
 
 
  ?>
+
+ <!-- This is the users profile page -->
  <html>
  <head>
  	<title>WE ROCK!</title>
