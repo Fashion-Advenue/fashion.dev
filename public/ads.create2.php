@@ -71,6 +71,13 @@ extract(pageController());
 
 <h3>Item Description</h3> 
   <textarea class="form-control" rows="3" placeholder="Enter Item Description"></textarea>
+<h3>File Uploader</h3>
+
+<div class="form-group">
+    <label for="exampleInputFile">Upload Image(s)</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Images limited to a maximum of four (4) uploads.</p>
+  </div>
 
 <h3>Item Category</h3> 
     <div class="radio">
