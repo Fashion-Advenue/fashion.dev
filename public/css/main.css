@@ -31,4 +31,19 @@ h2{
 .page-look{
     background-color: #f05f40;
 }
+.ad{
+        background-image: url(../img/create.jpg);
+
+}
+.form-btn{
+    background-color: #f05f40;
+    color: #fff;
+}
+.blkwht{
+        background-image: url(../img/tokyorunway.jpg);
+}
+.showad{
+    background-color: #4108d4;
+    color: #000;
+}
       

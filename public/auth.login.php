@@ -2,12 +2,12 @@
 
 session_start();
 
-require_once '/auth.php';
+// require_once '/auth.php'; --causes an error cant find file
 
 
-$message = 'Please login.';
+// $message = 'Please login.';
 
-var_dump($POST) . PHP_EOL;
+// var_dump($POST) . PHP_EOL; --causes an error undefined variable POST
 
 // ***************************
 // Require or include statements are allowed here.
@@ -23,10 +23,10 @@ function pageController()
 
 
 	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
+	$data['username'] = 'Hello Keyasha!';
 
 	// Return the completed data array.
-	return $data
+	return $data;
 
 }
 // Call the pageController function 
@@ -40,14 +40,16 @@ extract(pageController());
 
 
 
- ?>
+?>
 <html>
-<head>
-	<title>Login-Adlister</title>
-</head>
+<?php require_once '../views/partials/head.php'; ?>
 <body>
-	<h1><?= $message?></h1>
+<?php require_once '../views/partials/navbar.php'; ?>
+<?php require_once '../views/partials/header.php'; ?>
 
+
+	<h1><?= $username ?></h1>
+<!-- change forms to bootstrap forms see ads.create2.php -->
 	<form metho="POST" action="/login.php">
 		<label for="email" >Email</label>
 		<input id="email" name="email" type="text"><br>
@@ -58,6 +60,7 @@ extract(pageController());
         <input type="submit">
 	</form>
 
+<?php require_once '../views/partials/footer.php'; ?>
 </body>
 </html>
 
