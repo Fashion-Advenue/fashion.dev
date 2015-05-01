@@ -1,39 +1,28 @@
 <?php 
 
+require_once '../bootstrap.php'; 
+// To send this info to the DB I will need to call Ads::save(); I think??
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
 
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
+
+if(!empty($_POST))
 {
-    // Initialize an empty data array.
+    $newAd =  new Ads;
 
+    $newAd->title = Input::has('title') ? Input::get('title') : '';
+    $newAd->price = Input::has('price') ? Input::get('price') : '';
+    $newAd->size = Input::has('size') ? Input::get('size') : '';
+    $newAd->description = Input::has('description') ? Input::get('description') : '';
+    $newAd->category = Input::has('optionsRadios') ? Input::get('optionsRadios') : '';
+    $newAd->contact = Input::has('optionsCheckbox') ? Input::get('optionsCheckbox') : '';
+    $newAd->image = Input::has('image') ? Input::get('image') : '';
 
-    // Add data to be used in the HTML view.
-    $data['message'] = 'Hello Keyasha!';
-
-    // Return the completed data array.
-    return $data;
-
+    $newAd->save();
 }
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
 
 
-
-
-
-
-
- ?>
+var_dump($_POST);
+?>
 
 
 
@@ -48,103 +37,105 @@ extract(pageController());
         </div>
     </div>
 </header>
-    <h1>Create Your Ad</h1>
-    <form method="POST" action="" class="form-horizontal">
-  <div class="form-group">
-    <label for="inputTitle" class="col-sm-2 control-label">Title of Ad</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputTitle" placeholder="Title of Ad">
+    <div class="container">
+      <h1>Create Your Ad</h1>
+      <form method="POST" action="ads.create2.php" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputTitle" class="col-sm-2 control-label">Title of Ad</label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Title of Ad">
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPrice" class="col-sm-2 control-label">Price</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputPrice" placeholder="Price($)">
+    <div class="form-group">
+      <label for="inputPrice" class="col-sm-2 control-label">Price</label>
+      <div class="col-sm-10">
+        <input type="text" name="price" class="form-control" id="inputPrice" placeholder="Price($)">
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputSize" class="col-sm-2 control-label">Size</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputSize" placeholder="Item Size">
+    <div class="form-group">
+      <label for="inputSize" class="col-sm-2 control-label">Size</label>
+      <div class="col-sm-10">
+        <input type="text" name="size" class="form-control" id="inputSize" placeholder="Item Size">
+      </div>
     </div>
-  </div>
 
-<h3>Item Description</h3> 
-  <textarea class="form-control" rows="3" placeholder="Enter Item Description"></textarea>
-<h3>File Uploader</h3>
+  <h3>Item Description</h3> 
+    <textarea class="form-control" name="description" rows="3" placeholder="Enter Item Description"></textarea>
+  <h3>File Uploader</h3>
 
-<div class="form-group">
+  <div class="form-group">
     <label for="exampleInputFile">Upload Image(s)</label>
-    <input type="file" id="exampleInputFile">
+    <input type="file" name="image" id="exampleInputFile">
     <p class="help-block">Images limited to a maximum of four (4) uploads.</p>
   </div>
 
-<h3>Item Category</h3> 
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-        Women's Clothing
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-        Men's Clothing
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-        Women's Shoes
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option4">
-        Men's Shoes
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option5">
-        Jewelry
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option6">
-        Accessories
-      </label>
-    </div>
+  <h3>Item Category</h3> 
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="Women's Clothing">
+          Women's Clothing
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="Men's Clothing">
+          Men's Clothing
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="Women's Shoes">
+          Women's Shoes
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="Men's Shoes">
+          Men's Shoes
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="Jewelry">
+          Jewelry
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="Accessories">
+          Accessories
+        </label>
+      </div>
 
-<h3>Preferred Contact Method</h3>
+  <h3>Preferred Contact Method</h3>
 
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        Call
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        Text
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        Email
-      </label>
-    </div>
-<hr>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckbox" value="Call">
+          Call
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckbox" value="Text">
+          Text
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckbox" value="Email">
+          Email
+        </label>
+      </div>
+  <hr>
 
-  <div class="form-group">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-default form-btn">Submit Ad</button>
+    <div class="form-group">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-default form-btn">Submit Ad</button>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 
 <?php require_once '../views/partials/footer.php'; ?>  
 </body>

@@ -1,47 +1,48 @@
-<?php 
-// EXERCISE 9.9 AD LISTER PROJECT
+<?php
 
 require_once 'BaseModel.php';
 
-
-
 class Ads extends BaseModel {
 
-	protected static $table = 'users';
+    protected static $table = 'ads';
 
-	protected function update()
+
+    protected function update()
     {
-        $query = "UPDATE contacts 
-        SET name = :name, email = :email, :phone, :houseNum, :street, :city, :state, :zipCode, :preferContact
+        $query = "UPDATE ads 
+        SET title = :title, price = :price, size = :size, contact = :contact, 
+        category = :category, description = :description, image = :image
         WHERE id = :id";
         $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id',         $this->id,              PDO::PARAM_STR);
+        $stmt->bindValue(':title',   $this->title,        PDO::PARAM_STR);
+        $stmt->bindValue(':price',      $this->price,           PDO::PARAM_STR);
+        $stmt->bindValue(':size',   $this->size,        PDO::PARAM_STR);
+        $stmt->bindValue(':optionsCheckbox', $this->contact,    PDO::PARAM_STR);
+        $stmt->bindValue(':optionsRadios',    $this->category,         PDO::PARAM_STR);
+        $stmt->bindValue(':description',    $this->description,         PDO::PARAM_STR);
+        $stmt->bindValue(':image',    $this->image,         PDO::PARAM_STR);
 
-        $stmt->bindValue(':id', 		$this->id, 				PDO::PARAM_STR);
-        $stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
-        $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
-        $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
-        $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
-        $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
-       
+
         $stmt->execute();
     
         echo "The update() method was called by the save() method";
     }
     protected function insert()
      {   
-        $query = "INSERT INTO ads (id, headline, price, size, category, description, contact)
-        VALUES (:id, :headline, :price, :size, :cagetory, :description, :contact)";
+        $query = "INSERT INTO ads (id, title, price, size, contact, category, description, image)
+        VALUES (:id, :title, :price, :size, :optionsCheckbox, :optionsRadios, :description, :image)";
         
         $stmt = self::$dbc->prepare($query);
        
         $stmt->bindValue(':id', $this->id, PDO::PARAM_STR);
-		$stmt->bindValue(':headline', 	$this->headline, 		PDO::PARAM_STR);
-        $stmt->bindValue(':price', 		$this->price, 			PDO::PARAM_STR);
-        $stmt->bindValue(':size', 		$this->size, 			PDO::PARAM_STR);
-        $stmt->bindValue(':category', 	$this->category, 		PDO::PARAM_STR);
-        $stmt->bindValue(':description', $this->description, 	PDO::PARAM_STR);
-        $stmt->bindValue(':contact', 	$this->contact, 		PDO::PARAM_STR);
+        $stmt->bindValue(':title',   $this->title,        PDO::PARAM_STR);
+        $stmt->bindValue(':price',      $this->price,           PDO::PARAM_STR);
+        $stmt->bindValue(':size',   $this->size,        PDO::PARAM_STR);
+        $stmt->bindValue(':optionsCheckbox', $this->contact,    PDO::PARAM_STR);
+        $stmt->bindValue(':optionsRadios',    $this->category,         PDO::PARAM_STR);
+        $stmt->bindValue(':description',    $this->description,         PDO::PARAM_STR);
+        $stmt->bindValue(':image',    $this->image,         PDO::PARAM_STR);
 
         $stmt->execute();
 
@@ -50,35 +51,4 @@ class Ads extends BaseModel {
         
     }
 
-       public static function all()
-    {
-        self::dbConnect();
-        
-        $query  = 'SELECT * FROM ads';
-        
-        $results = self::$dbc->query($query)->fetchAll(PDO::FETCH_ASSOC);
-        return $resultsAds;
-      
-    }
-
-        public function delete()
-    {
-        $id = $this->attributes['id'];
-        $query = "DELETE FROM ads
-        WHERE id = :id";
-        
-        $stmt = self::$dbc->prepare($query);
-        
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
-        
-        $stmt->execute();
-        
-        echo "Deleted contact found at ID : " . $id;
-    }
 }
-
-}
-
-
-
-
