@@ -1,50 +1,47 @@
 <?php 
+require_once '../bootstrap.php';
 
 
+$ads = Ads::all();
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
-
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
+if(Input::has('show'))
 {
-	// Initialize an empty data array.
-
-
-	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
-
-	// Return the completed data array.
-	return $data
-
+     $id = Input::get('show');
+     header("Location:ads.show.php?show=$id");
+     exit();
 }
-// Call the pageController function 
-// and extract all the returned array as local variables.
-
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
-
-
-
- ?>
+?>
 
 
 
  <html>
- <head>
- 	<title>Index Ads</title>
-
- </head>
+<?php require_once '../views/partials/head.php'; ?> 
+ 	
  <body>
- <h1>For Sale Now</h1>
+<?php require_once '../views/partials/navbar.php'; ?>
+<header class="blkwht">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>The intersection where fashion meets passion</h1>
+        </div>
+    </div>
+</header>
+
+    <div class="container">
+        <h1>Browse All Ads</h1>
+        <hr>
+        <ul>
+            <?php foreach ($ads as $ad): ?>
+                <li><a href="?show=<?= $ad['id']?>"><?= $ad['title'] ?></a></li>
+        
+
+            <?php endforeach; ?>
+        </ul>
+    </div>
 
 
 
-
+<?php require_once '../views/partials/footer.php'; ?>
  </body>
  </html>
 

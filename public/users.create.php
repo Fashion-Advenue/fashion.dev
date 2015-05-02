@@ -1,81 +1,65 @@
 <?php 
 
-// Require or include statements are allowed here.
-// All other code goes in the pageController function.
+require_once '../bootstrap.php';
 
-
-
-/*
- *The pageController function handles all processing for this page.
- *@return array an associative array of data used in rendering the HTML view.
- */
-function pageController()
+if(!empty($_POST))
 {
-	// Initialize an empty data array.
-	$users = [];
+    $newUser =  new Users;
 
-	// Add data to be used in the HTML view.
-	$data['message'] = 'Hello Keyasha!';
+    $newUser->email = Input::has('email') ? Input::get('email') : '';
+    $newUser->username = Input::has('username') ? Input::get('username') : '';
+    $newUser->password = Input::has('password') ? Input::get('password') : '';
+    $newUser->profile_img = Input::has('profile_img') ? Input::get('profile_img') : '';
 
-	// Return the completed data array.
-	return $data
-
+    $newUser->save();
 }
-// Call the pageController function 
-// and extract all the returned array as local variables.
 
-extract(pageController());
-
-// Only use echo, conditionals and loops anywhere within the HTML.
-
-
-
-
-
+var_dump($_POST);
 ?>
+<!-- This is the user signup page -->
 <html>
-<head>
-	<title></title>
-</head>
+<?php require_once '../views/partials/head.php'; ?>
 <body>
-<h1>Register Your Account</h1>
-	 <div>
+<?php require_once '../views/partials/navbar.php'; ?>
+<header class="ad">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>The intersection where fashion meets passion</h1>
+        </div>
+    </div>
+</header>
 
-		<form method="POST" action="">
-			<label for="userName">*Please enter a user name.</label>
-			<input id="userName" placeholder="Username">
-			<label for="firstName">*First Name</label>
-			<input id="firstName" 		placeholder="First Name">
-			<label id="lastName">*Last Name</label>
-			<input id="lastName"		placeholder="Last Name">
-			<label for="email">*Email</label>
-			<input id="email"			placeholder="email">
-			<label id="phone">*Enter your phone in the suggested format.</label>
-			<input id="phone"			placeholder="phone xxx-xxx-xxxx">
-		
-			<p>Your Contact Preference:</p>
-			<label>	<input type="checkbox" 	id="callUser" 		name="">Call</label>
-			<label>	<input type="checkbox" 	id="textUser" 		name="">Call</label>
-			<label> <input type="checkbox" 	id="emailUser" 		name="">Email</label>
-			
-			<label>Address Number</label>
-			<input id="houseNum" >
-			<label>Street</label>
-			<input id="street">
-			<label>Apt. or Unit</label>
-			<input id="apartment">
-			<label>City</label>
-			<input id="city">
-			<label>State</label>
-			<input id="state">
-			<label>5-Digit Zip Code</label>
-			<input id="zipCode">
+<!-- This should add the user the the db in the users table -->
+  <h1>Create Your Account</h1>
+<hr>
+	<div class="container">
+       <form method="POST" action="users.create.php">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Username</label>
+        <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+  <h3>Upload Profile Image</h3>
 
-			<button type="submit"></button>
-
-		</form>
-	</div>
-
+      <div class="form-group">
+        <label for="exampleInputFile">Upload Profile Image</label>
+        <input type="file" name="profile_img" id="exampleInputFile">
+        <p class="help-block">Profile image should be limited to a size of 150px x 150px.</p>
+      </div>
+    <hr>
+      <button type="submit" class="btn btn-default form-btn">Submit</button>
+    </form>
+  </div>
+<!-- Once create account successful header redirect to myaccount page for that user
+issue message: Welcome, $username!  -->
+<?php require_once '../views/partials/footer.php'; ?>
 </body>
 </html>
 
