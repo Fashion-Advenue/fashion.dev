@@ -8,11 +8,15 @@ class Users extends BaseModel {
 
     protected function update()
     {
+        $hashed_pass = password_hash($this->password, PASSWORD_DEFAULT);
+
         $query = "UPDATE users 
         SET username = :username, email = :email, 
         password = :password, profile_img = :profile_img
         WHERE id = :id";
+        
         $stmt = self::$dbc->prepare($query);
+
         $stmt->bindValue(':id',         $this->id,              PDO::PARAM_STR);
         $stmt->bindValue(':username',   $this->username,        PDO::PARAM_STR);
         $stmt->bindValue(':email',      $this->email,           PDO::PARAM_STR);
@@ -25,6 +29,8 @@ class Users extends BaseModel {
     }
     protected function insert()
      {   
+        $hashed_pass = password_hash($this->password, PASSWORD_DEFAULT);
+        
         $query = "INSERT INTO users (id, username, email, password, profile_img)
         VALUES (:id, :username, :email, :password, :profile_img)";
         
